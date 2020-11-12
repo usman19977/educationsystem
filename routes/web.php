@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,12 +36,15 @@ Route::get('/tenders', function () {
 Route::get('/contact', function () {
     return view('frontend.contact');
 });
-Route::get('/login', function () {
-    return view('frontend.auth.login');
+
+Route::get('/dashboard', function () {
+    return view('frontend.layouts.dashboard.dashboard');
+})->middleware(['auth', 'verified']);
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('login');
 });
-Route::get('/apply', function () {
-    return view('frontend.auth.signup');
-});
+
 Route::get('api/subject', 'App\Http\Controllers\SubjectController@index');
 Route::get('api/subject/{id}', 'App\Http\Controllers\SubjectController@show');
 Route::get('api/student', 'App\Http\Controllers\StudentController@index');

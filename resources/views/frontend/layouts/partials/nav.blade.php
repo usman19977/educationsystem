@@ -21,18 +21,37 @@
                         </div>
                     </div>
                     <div class="col-md topper d-flex align-items-center justify-content-end">
-                        <p class="mb-0">
-                            <a href="/apply" class="btn py-2 px-3 btn-success d-flex align-items-center justify-content-center">
-                                <span>Apply now</span>
-                            </a>
+                    @if (Auth::check())
+                    <p class="mb-0">
+                        <a href="/dashboard" class="btn py-2 px-3 btn-success d-flex align-items-center justify-content-center">
+                            <span>Dashboard</span>
+                        </a>
 
-                        </p>
-                        <p class="mb-0">
-                            <a href="/login" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
-                                <span>Login</span>
-                            </a>
+                    </p>
+                    <p class="mb-0">
+                        <form method="POST" action="/logout">
+                        @csrf
+                            <button type="submit" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                            <span>Logout</span>
+                            </button>
+                        </form>
 
-                        </p>
+                    </p>
+                    @else
+                    <p class="mb-0">
+                        <a href="/apply" class="btn py-2 px-3 btn-success d-flex align-items-center justify-content-center">
+                            <span>Apply now</span>
+                        </a>
+
+                    </p>
+                    <p class="mb-0">
+                        <a href="/login" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                            <span>Login</span>
+                        </a>
+
+                    </p>
+                    @endif
+
                     </div>
 
                 </div>
