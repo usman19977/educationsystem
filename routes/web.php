@@ -37,9 +37,24 @@ Route::get('/contact', function () {
     return view('frontend.contact');
 });
 
-Route::get('/dashboard', function () {
-    return view('frontend.layouts.dashboard.dashboard');
-})->middleware(['auth', 'verified']);
+
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('dashboard', function () {
+        return view('frontend.layouts.dashboard.dashboard');
+    });
+    Route::get('admit-cards', function () {
+        return view('frontend.layouts.dashboard.admit-cards');
+    });
+    Route::get('carier-requests', function () {
+        return view('frontend.layouts.dashboard.carier-requests');
+    });
+
+    Route::get('settings', function () {
+        return view('frontend.layouts.dashboard.settings');
+    });
+});
 Route::get('/logout', function () {
     Auth::logout();
     return redirect('login');

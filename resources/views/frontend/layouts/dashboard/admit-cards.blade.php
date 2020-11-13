@@ -10,7 +10,7 @@
         <div class="col-md-9 p-4 p-md-5 order-md-last bg-light" >
 
 
-        Dashboard
+        Admit Cards
 
         <div>
 
