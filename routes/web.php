@@ -1,6 +1,17 @@
 <?php
 
+use App\Http\Controllers\About;
+use App\Http\Controllers\AdmitCard;
+use App\Http\Controllers\AffiliateSchool;
+use App\Http\Controllers\CarierRequest;
+use App\Http\Controllers\Contact;
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Downloads;
+use App\Http\Controllers\Home;
+use App\Http\Controllers\PressRelease;
+use App\Http\Controllers\Tender;
 use App\Models\User;
+use Doctrine\DBAL\Schema\Index;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,41 +26,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
-Route::get('/about', function () {
-    return view('frontend.about');
-});
-Route::get('/affiliatedschools', function () {
-    return view('frontend.affiliatedschools');
-});
-Route::get('/downloads', function () {
-    return view('frontend.downloads');
-});
-Route::get('/pressrelease', function () {
-    return view('frontend.pressrelease');
-});
-Route::get('/tenders', function () {
-    return view('frontend.tenders');
-});
-Route::get('/contact', function () {
-    return view('frontend.contact');
-});
+Route::get('/',  [Home::class, 'index']);
+Route::get('/about', [About::class, 'index']);
+Route::get('/affiliatedschools', [AffiliateSchool::class, 'index']);
+Route::get('/downloads', [Downloads::class, 'index']);
+Route::get('/pressrelease', [PressRelease::class, 'index']);
+Route::get('/tenders', [Tender::class, 'index']);
+Route::get('/contact', [Contact::class, 'index']);
 
 
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return view('frontend.layouts.dashboard.dashboard');
-    });
-    Route::get('admit-cards', function () {
-        return view('frontend.layouts.dashboard.admit-cards');
-    });
-    Route::get('carier-requests', function () {
-        return view('frontend.layouts.dashboard.carier-requests');
-    });
+    Route::get('dashboard', [Dashboard::class, 'index']);
+    Route::get('admit-cards', [AdmitCard::class, 'index']);
+    Route::get('carier-requests', [CarierRequest::class, 'index']);
 
     Route::get('settings', function () {
         return view('frontend.layouts.dashboard.settings');

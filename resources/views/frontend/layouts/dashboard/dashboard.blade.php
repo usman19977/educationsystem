@@ -10,7 +10,48 @@
         <div class="col-md-9 p-4 p-md-5 order-md-last bg-light" >
 
 
-        Dashboard
+            <div class="row">
+                <div class="col-xs-3 col-md-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-body bg-blue white">
+                        <h5 style="color: white;font-weight: bold">Total Requests</h5>
+                        <h5 style="color: white;font-weight: inherit">28</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-md-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-body bg-red white">
+                            <h5 style="color: white;font-weight: bold">Pending Requests</h5>
+                            <h5 style="color: white;font-weight: inherit">28</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-3 col-md-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-body bg-success white">
+
+                            <h5 style="color: white;font-weight: bold">Approved Requests</h5>
+                            <h5 style="color: white;font-weight: inherit">28</h5>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-6 col-xs-12">
+                    <div class="card">
+                        <div class="card-body bg-amber white" >
+
+                            <h5 style="color: white;font-weight: bold">Admit Cards</h5>
+                            <h5 style="color: white;font-weight: inherit">28</h5>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <div>
 

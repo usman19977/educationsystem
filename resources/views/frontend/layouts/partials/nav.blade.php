@@ -39,7 +39,7 @@
                     </p>
                     @else
                     <p class="mb-0">
-                        <a href="/apply" class="btn py-2 px-3 btn-success d-flex align-items-center justify-content-center">
+                        <a href="{{route('register')}}" class="btn py-2 px-3 btn-success d-flex align-items-center justify-content-center">
                             <span>Apply now</span>
                         </a>
 

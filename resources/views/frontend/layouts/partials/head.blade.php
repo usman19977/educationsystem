@@ -19,4 +19,11 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/colors.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/pace.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-extended.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-extended.min.css') }}">
+
   </head>
