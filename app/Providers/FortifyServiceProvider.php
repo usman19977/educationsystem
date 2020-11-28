@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\School;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Request;
@@ -50,7 +51,9 @@ class FortifyServiceProvider extends ServiceProvider
             }
         });
         Fortify::registerView(function () {
-            return view('frontend.auth.signup');
+            $school = School::all();
+
+            return view('frontend.auth.signup')->with('schools', $school);
         });
         Fortify::requestPasswordResetLinkView(function () {
             return view('frontend.auth.forget-password');

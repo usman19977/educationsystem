@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact as ModelsContact;
+use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class Contact extends Controller
 {
@@ -13,7 +16,10 @@ class Contact extends Controller
      */
     public function index()
     {
-        return view('frontend.contact');
+        $content = Page::where(['slug' => 'contact-us'])->get();
+        return view('frontend.contact')->with('data', [
+            'content' => $content
+        ]);
     }
 
     /**
@@ -35,6 +41,28 @@ class Contact extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'subject' => 'required|string|max:255',
+            'message' => 'required|string|max:255',
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            ModelsContact::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message
+
+            ]);
+            return redirect()->back()->with('success', 'Message has been recieved');
+        }
     }
 
     /**

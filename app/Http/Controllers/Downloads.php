@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Download;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class Downloads extends Controller
 {
@@ -11,8 +13,23 @@ class Downloads extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $data = Download::latest()->get();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('name', function ($a) {
+                    return $a->name;
+                })
+                ->addColumn('image', function ($a) {
+                    return '<a href=' . url(
+                        $a->image
+                    ) . ' style="color:blue">Click here to download</a>';
+                })
+                ->escapeColumns([])
+                ->make(true);
+        }
         return view('frontend.downloads');
     }
 

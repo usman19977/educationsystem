@@ -12898,3 +12898,96 @@ main .card {
     stroke-dashoffset: -136px;
   }
 }
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+ul,
+ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+.section {
+  padding: 10%;
+}
+.section-bg {
+  background-image: url("../images/section-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: top;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 5% 120px;
+}
+.section-title h2 {
+  font-size: 38px;
+  text-transform: capitalize;
+  padding-bottom: 12px;
+  position: relative;
+  margin-bottom: 18px;
+}
+.section-title h2::before {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 100px;
+  height: 2px;
+  background: #666;
+  bottom: -1px;
+  margin-left: -50px;
+}
+.section-title h2::after {
+  position: absolute;
+  left: 50%;
+  content: "";
+  width: 100px;
+  height: 2px;
+  background: #666;
+  bottom: -6px;
+  margin-left: -63px;
+}
+.section-title p {
+  font-size: 15px;
+}

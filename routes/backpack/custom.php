@@ -43,4 +43,14 @@ Route::group([
 
     Route::crud('admitcard', 'AdmitcardCrudController');
     // Route::crud('user', 'UserCrudController');
+    Route::crud('pressrelease', 'PressReleaseCrudController');
+    Route::crud('download', 'DownloadCrudController');
+    Route::crud('tender', 'TenderCrudController');
+    Route::crud('page', 'PageCrudController');
+    Route::crud('slider', 'SliderCrudController');
+    Route::crud('contact', 'ContactCrudController');
+    Route::crud('director', 'DirectorCrudController');
+    Route::crud('teacher', 'TeacherCrudController');
+    Route::crud('testimonal', 'TestimonalCrudController');
+    Route::crud('subscriber', 'SubscriberCrudController');
 }); // this should be the absolute last line of this file

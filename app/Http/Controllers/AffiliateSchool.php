@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\School;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class AffiliateSchool extends Controller
 {
@@ -11,8 +13,26 @@ class AffiliateSchool extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $data = School::latest()->get();
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('name', function ($a) {
+                    return $a->name;
+                })
+                ->addColumn('school_code', function ($a) {
+                    return $a->school_code;
+                })
+                ->addColumn('phone', function ($a) {
+                    return $a->phone;
+                })
+                ->addColumn('address', function ($a) {
+                    return $a->address;
+                })
+                ->make(true);
+        }
         return view('frontend.affiliatedschools');
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class About extends Controller
@@ -13,7 +14,10 @@ class About extends Controller
      */
     public function index()
     {
-        return view('frontend.about');
+        $content = Page::where(['slug' => 'about-page'])->get();
+        return view('frontend.about')->with('data', [
+            'content' => $content
+        ]);
     }
 
     /**

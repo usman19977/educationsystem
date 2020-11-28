@@ -55,6 +55,21 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function admitcards()
     {
-        return $this->hasMany('App\Models\AdmitCard', 'user_id', 'id');
+
+        return $this->hasManyThrough(
+            'App\Models\AdmitCard',
+            'App\Models\Student',
+            'user_id',
+            'student_id'
+        );
+    }
+    public function carier_requests()
+    {
+        return $this->hasManyThrough(
+            'App\Models\Request',
+            'App\Models\Student',
+            'user_id',
+            'student_id'
+        );
     }
 }

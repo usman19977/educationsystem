@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Request;
+use App\Models\Student;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class Dashboard extends Controller
 {
@@ -13,7 +16,24 @@ class Dashboard extends Controller
      */
     public function index()
     {
-        return view('frontend.layouts.dashboard.dashboard');
+
+        $total_request = Auth::user()->carier_requests()->count();
+        // $pending_request = Auth::user()->carier_requests()->count();
+        $pending_request = Auth::user()->carier_requests()->where('requests.status', '=', 'Pending')->count();
+
+        $approved_request = Auth::user()->carier_requests()->where('requests.status', '=', 'Admit Card Generated')->count();
+
+        $admit_card = Auth::user()->admitcards()->count();
+
+
+        $response = [
+            'total_requests' => $total_request,
+            'pending_request' =>  $pending_request,
+            'approved_request' => $approved_request,
+            'admit_card' => $admit_card
+        ];
+
+        return view('frontend.layouts.dashboard.dashboard', ['data' => $response]);
     }
 
     /**

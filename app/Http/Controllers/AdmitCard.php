@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdmitCard extends Controller
 {
@@ -13,7 +14,10 @@ class AdmitCard extends Controller
      */
     public function index()
     {
-        return view('frontend.layouts.dashboard.admit-cards');
+
+        $admit_cards = Auth::user()->admitcards()->get();
+        // return $admit_cards;
+        return view('frontend.layouts.dashboard.admit-cards')->with('admit_cards', $admit_cards);
     }
 
     /**
@@ -45,7 +49,11 @@ class AdmitCard extends Controller
      */
     public function show($id)
     {
-        //
+
+        $admitCard = Auth::user()->admitcards()->where(['admitcards.id' => $id])->get();
+
+
+        return view('admitcard', ['data' => $admitCard[0]]);
     }
 
     /**

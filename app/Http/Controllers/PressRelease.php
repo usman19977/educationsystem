@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PressRelease as ModelsPressRelease;
 use Illuminate\Http\Request;
 
 class PressRelease extends Controller
@@ -13,7 +14,11 @@ class PressRelease extends Controller
      */
     public function index()
     {
-        return view('frontend.pressrelease');
+        $press = ModelsPressRelease::all();
+
+        return view('frontend.pressrelease')->with('data', [
+            'content' => $press
+        ]);
     }
 
     /**

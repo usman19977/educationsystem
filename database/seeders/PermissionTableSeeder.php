@@ -72,6 +72,79 @@ class PermissionTableSeeder extends Seeder
             ['name' => 'update_user', 'guard_name' => 'backpack'],
             ['name' => 'delete_user', 'guard_name' => 'backpack'],
 
+            ['name' => 'manage_auth', 'guard_name' => 'backpack'],
+
+
+            ['name' => 'manage_all_student', 'guard_name' => 'backpack'],
+
+            ['name' => 'manage_all_carier_request', 'guard_name' => 'backpack'],
+
+            ['name' => 'generate_admit_card_carier_request', 'guard_name' => 'backpack'],
+
+            ['name' => 'manage_all_admit_card', 'guard_name' => 'backpack'],
+
+
+            ['name' => 'list_press_release', 'guard_name' => 'backpack'],
+            ['name' => 'create_press_release', 'guard_name' => 'backpack'],
+            ['name' => 'update_press_release', 'guard_name' => 'backpack'],
+            ['name' => 'delete_press_release', 'guard_name' => 'backpack'],
+
+            ['name' => 'manage_frontend', 'guard_name' => 'backpack'],
+
+            ['name' => 'list_download', 'guard_name' => 'backpack'],
+            ['name' => 'create_download', 'guard_name' => 'backpack'],
+            ['name' => 'update_download', 'guard_name' => 'backpack'],
+            ['name' => 'delete_download', 'guard_name' => 'backpack'],
+
+
+
+            ['name' => 'list_tender', 'guard_name' => 'backpack'],
+            ['name' => 'create_tender', 'guard_name' => 'backpack'],
+            ['name' => 'update_tender', 'guard_name' => 'backpack'],
+            ['name' => 'delete_tender', 'guard_name' => 'backpack'],
+
+
+            ['name' => 'list_page', 'guard_name' => 'backpack'],
+            ['name' => 'create_page', 'guard_name' => 'backpack'],
+            ['name' => 'update_page', 'guard_name' => 'backpack'],
+            ['name' => 'delete_page', 'guard_name' => 'backpack'],
+
+
+            ['name' => 'list_slider', 'guard_name' => 'backpack'],
+            ['name' => 'create_slider', 'guard_name' => 'backpack'],
+            ['name' => 'update_slider', 'guard_name' => 'backpack'],
+            ['name' => 'delete_slider', 'guard_name' => 'backpack'],
+
+
+            ['name' => 'list_contact', 'guard_name' => 'backpack'],
+            ['name' => 'create_contact', 'guard_name' => 'backpack'],
+            ['name' => 'update_contact', 'guard_name' => 'backpack'],
+            ['name' => 'delete_contact', 'guard_name' => 'backpack'],
+
+
+
+            ['name' => 'list_director', 'guard_name' => 'backpack'],
+            ['name' => 'create_director', 'guard_name' => 'backpack'],
+            ['name' => 'update_director', 'guard_name' => 'backpack'],
+            ['name' => 'delete_director', 'guard_name' => 'backpack'],
+
+            ['name' => 'list_teacher', 'guard_name' => 'backpack'],
+            ['name' => 'create_teacher', 'guard_name' => 'backpack'],
+            ['name' => 'update_teacher', 'guard_name' => 'backpack'],
+            ['name' => 'delete_teacher', 'guard_name' => 'backpack'],
+
+            ['name' => 'list_testimonal', 'guard_name' => 'backpack'],
+            ['name' => 'create_testimonal', 'guard_name' => 'backpack'],
+            ['name' => 'update_testimonal', 'guard_name' => 'backpack'],
+            ['name' => 'delete_testimonal', 'guard_name' => 'backpack'],
+
+
+            ['name' => 'list_subscribe', 'guard_name' => 'backpack'],
+            ['name' => 'create_subscribe', 'guard_name' => 'backpack'],
+            ['name' => 'update_subscribe', 'guard_name' => 'backpack'],
+            ['name' => 'delete_subscribe', 'guard_name' => 'backpack'],
+
+
 
         ];
 

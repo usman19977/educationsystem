@@ -76,6 +76,7 @@ class UserCrudController extends CrudController
         CRUD::column('created_at');
         CRUD::column('updated_at');
 
+
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');

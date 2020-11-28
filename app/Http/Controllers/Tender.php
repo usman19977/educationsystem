@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tender as ModelsTender;
 use Illuminate\Http\Request;
 
 class Tender extends Controller
@@ -13,7 +14,12 @@ class Tender extends Controller
      */
     public function index()
     {
-        return view('frontend.tenders');
+
+        $press = ModelsTender::all();
+
+        return view('frontend.tenders')->with('data', [
+            'content' => $press
+        ]);
     }
 
     /**

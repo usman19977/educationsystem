@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Director;
+use App\Models\Slider;
+use App\Models\Teacher;
+use App\Models\Testimonal;
 use Illuminate\Http\Request;
 
 class Home extends Controller
@@ -14,7 +18,19 @@ class Home extends Controller
     public function index()
     {
         //
-        return view('frontend.home');
+        $slider = Slider::all();
+        $directors = Director::all();
+        $testimonal = Testimonal::all();
+        $teachers = Teacher::all();
+
+
+
+        return view('frontend.home')->with('data', [
+            'slider' => $slider,
+            'directors' => $directors,
+            'testimonal' => $testimonal,
+            'teachers' => $teachers,
+        ]);
     }
 
     /**

@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Criteria;
+use App\Models\Request as ModelsRequest;
+use App\Models\Shift;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class CarierRequest extends Controller
 {
@@ -13,7 +18,10 @@ class CarierRequest extends Controller
      */
     public function index()
     {
-        return view('frontend.layouts.dashboard.carier-requests');
+        $carier_requests = Auth::user()->carier_requests()->with(['school', 'criteria'])->get();
+
+
+        return view('frontend.layouts.dashboard.carier-requests', ['carier_requests' => $carier_requests]);
     }
 
     /**
@@ -24,6 +32,14 @@ class CarierRequest extends Controller
     public function create()
     {
         //
+        $criteria = Criteria::all();
+        $shifts = Shift::all();
+        return view('frontend.layouts.dashboard.carier-request-create')->with(
+            [
+                'criterias' => $criteria,
+                'shift' => $shifts
+            ]
+        );
     }
 
     /**
@@ -34,7 +50,48 @@ class CarierRequest extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+
+            'criteria' => 'required|numeric',
+            'shifts' => 'required|numeric',
+
+
+        ]);
+
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        } else {
+            $user = Auth::user();
+            $criteria = Criteria::findorfail($request->criteria);
+            $shift = Shift::findorfail($request->shifts);
+            $subjectid_arr = [];
+            $subjects = $criteria->subjects;
+
+            $student = $user->students;
+            $school = $student->school;
+            $request =  ModelsRequest::create([
+
+                'school_id' => $school->id,
+                'shift_id' => $shift->id,
+                'criteria_id' => $criteria->id,
+                'student_id' => $student->id,
+
+
+
+
+
+            ]);
+            // for ($i = 0; $i < count($subjects); $i++) {
+            //     $subjectid_arr[] = $subjects[$i]->id;
+            // }
+            $request->subjects()->attach($subjects);
+
+            return redirect()->back()->with('successCreateCarierRequest', 'Carier Request Is Created Successfully');
+        }
+        // return $school;
     }
 
     /**
