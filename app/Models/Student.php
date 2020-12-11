@@ -32,6 +32,12 @@ class Student extends Model
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
+    //ACESOR//
+    public function getImageAttribute($value)
+    {
+        return 'http://127.0.0.1:8000/' . $value;
+    }
+    //MUTATOR//
     public function setImageAttribute($value)
     {
 

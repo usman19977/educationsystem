@@ -21,4 +21,15 @@ class Admitcard extends Model
     {
         return $this->belongsTo('App\Models\Request', 'request_id', 'id');
     }
+
+
+    // public function getImageAttribute($value)
+    // {
+    //     return 'http://127.0.0.1:8000/' . $value;
+    // }
+    public function getDateOfBirthAttribute($value)
+    {
+
+        return date('d-m-Y', strtotime($value));
+    }
 }

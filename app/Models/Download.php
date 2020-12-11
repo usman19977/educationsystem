@@ -47,7 +47,15 @@ class Download extends Model
     | ACCESSORS
     |--------------------------------------------------------------------------
     */
+    public function getCreatedAtAttribute($value)
+    {
 
+        return date('d-m-Y', strtotime($value));
+    }
+    public function getImageAttribute($value)
+    {
+        return 'http://127.0.0.1:8000/' . $value;
+    }
     /*
     |--------------------------------------------------------------------------
     | MUTATORS

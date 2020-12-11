@@ -50,6 +50,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password'])
         ]);
 
+        $user->assignRole('Student');
 
         $student = Student::create([
             'candidate_name' => $input['name'],
