@@ -37,6 +37,11 @@ class Student extends Model
     {
         return 'http://127.0.0.1:8000/' . $value;
     }
+    public function getDateOfBirthAttribute($value)
+    {
+
+        return date('d-m-Y', strtotime($value));
+    }
     //MUTATOR//
     public function setImageAttribute($value)
     {

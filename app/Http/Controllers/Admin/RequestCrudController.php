@@ -333,8 +333,10 @@ class RequestCrudController extends CrudController
 
         // ];
         $admitCard = Admitcard::findorfail($id);
-
-        return view('admitcard', ['data' => $admitCard]);
+        $a = ['data' => $admitCard];
+        // $pdf = PDF::loadView('admitcard', $a);
+        // return $pdf->download('medium.pdf');
+        return view('admitcard', $a);
     }
     public function generateAdmitCard($id)
     {

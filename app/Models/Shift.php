@@ -27,4 +27,15 @@ class Shift extends Model
     {
         return $this->hasMany('App\Models\Request', 'shift_id', 'id');
     }
+
+    public function getFromAttribute($value)
+    {
+
+        return date('H:i A', strtotime($value));
+    }
+    public function getToAttribute($value)
+    {
+
+        return date('H:i A', strtotime($value));
+    }
 }
