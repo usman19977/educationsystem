@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "datatables.net-bs4": "^1.10.22",
-        "datatables.net-buttons-bs4": "^1.6.5"
+        "datatables.net-buttons-bs4": "^1.6.5",
+        "puppeteer": "^5.5.0"
     }
 }
