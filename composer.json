@@ -24,8 +24,8 @@
         "laravel/sanctum": "^2.8",
         "laravel/tinker": "^2.0",
         "simplesoftwareio/simple-qrcode": "~4",
-        "yajra/laravel-datatables-oracle": "~9.0",
-        "spatie/browsershot": "^3.40"
+        "spatie/browsershot": "^3.40",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "backpack/generators": "^3.1",
