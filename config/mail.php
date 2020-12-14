@@ -32,7 +32,7 @@ return [
     |            "postmark", "log", "array"
     |
     */
-    mysql://b445b5dedc4b60:46f31b15@us-cdbr-east-02.cleardb.com/heroku_30b527e6f9b0b70?reconnect=true
+
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
