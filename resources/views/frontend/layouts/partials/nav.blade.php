@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row no-gutters d-flex align-items-center align-items-stretch">
             <div class="col-md-4 d-flex align-items-center py-4">
-                <a class="navbar-brand" href="/">Education <span>System</span></a>
+                <a class="navbar-brand" href="/">BSEK <span>System</span></a>
             </div>
             <div class="col-lg-8 d-block">
                 <div class="row d-flex">
@@ -11,7 +11,7 @@
                                 class="icon-paper-plane"></span></div>
                         <div class="text">
                             <span>Email</span>
-                            <a href="mailto:info@educationsystem.com"><span>info@educationsystem.com</span></a>
+                            <a href="mailto:info@bsek.com"><span>info@bsek.com</span></a>
                         </div>
                     </div>
                     <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">

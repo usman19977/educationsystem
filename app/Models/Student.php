@@ -35,7 +35,7 @@ class Student extends Model
     //ACESOR//
     public function getImageAttribute($value)
     {
-        return 'http://127.0.0.1:8000/' . $value;
+        return 'http://sleepy-coast-04760.herokuapp.com/' . $value;
     }
     public function getDateOfBirthAttribute($value)
     {

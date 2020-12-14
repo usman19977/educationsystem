@@ -120,7 +120,7 @@ class apiController extends Controller
         $sliders_withurl = [];
         foreach ($sliders as $key => $slider) {
             $sliderobj = new stdClass;
-            $sliderobj->image  = 'http://127.0.0.1:8000/' . $slider->image;
+            $sliderobj->image  = 'http://sleepy-coast-04760.herokuapp.com/' . $slider->image;
             $sliders_withurl[] = $sliderobj;
         }
         return response()->json([

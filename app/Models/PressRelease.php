@@ -50,7 +50,7 @@ class PressRelease extends Model
 
     public function getImageAttribute($value)
     {
-        return 'http://127.0.0.1:8000/' . $value;
+        return 'http://sleepy-coast-04760.herokuapp.com/' . $value;
     }
 
     /*

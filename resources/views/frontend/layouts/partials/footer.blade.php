@@ -10,8 +10,8 @@
                             </li>
                             <li><a href="tel:923002490636"><span class="icon icon-phone"></span><span
                                         class="text">+923002490636</span></a></li>
-                            <li><a href="mailto:info@educationsystem.com"><span class="icon icon-envelope"></span><span
-                                        class="text">info@educationsystem.com</span></a></li>
+                            <li><a href="mailto:info@bsek.com"><span class="icon icon-envelope"></span><span
+                                        class="text">info@bsek.com</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     Copyright &copy;<script>
                         document.write(new Date().getFullYear());
 
-                    </script> All rights reserved | Education System</a>
+                    </script> All rights reserved | BSEK System</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>
