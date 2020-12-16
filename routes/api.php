@@ -47,10 +47,7 @@ Route::group(
         Route::get('/schools/all', [apiController::class, 'getAllSchools']);
         Route::get('/page/{slug}', [apiController::class, 'getCorrectionPage']);
         Route::post('/subscriber', [apiController::class, 'addSubscriber']);
-
-
-
-
+        Route::post('/changepassword', [apiController::class, 'changePassword']);
         Route::get('/student/details', [apiController::class, 'getStudentDetails']);
         Route::post('/logout', [apiController::class, 'logout']);
     }

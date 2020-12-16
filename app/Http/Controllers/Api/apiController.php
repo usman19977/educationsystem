@@ -333,4 +333,48 @@ class apiController extends Controller
             ], 200);
         }
     }
+    public function changePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'old_password' => 'required',
+            'new_password' => 'required|min:6',
+
+        ]);
+
+        if ($validator->fails()) {
+
+
+            return response()->json([
+                'message' => 'Validations',
+                'validation_messages' => $validator->errors(),
+            ], 400);
+        } else {
+            try {
+                if ((Hash::check(request('old_password'), Auth::user()->password)) == false) {
+                    return response()->json(
+                        ['message' => 'Check your old password.'],
+                        400
+                    );
+                } else if ((Hash::check(request('new_password'), Auth::user()->password)) == true) {
+
+                    return response()->json(
+                        ["message" => "Please enter a password which is not similar then current password."],
+                        400
+                    );
+                } else {
+                    User::where('id', auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
+                    return response()->json([
+                        'message' => 'You are good to go ',
+
+                    ], 200);
+                }
+            } catch (\Exception $ex) {
+                if (isset($ex->errorInfo[2])) {
+                    $msg = $ex->errorInfo[2];
+                } else {
+                    $msg = $ex->getMessage();
+                }
+            }
+        }
+    }
 }
